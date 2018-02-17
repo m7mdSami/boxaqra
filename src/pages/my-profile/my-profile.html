@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-navbar color="primary1">
+    <ion-title>Setting</ion-title>
+    <button ion-button menuToggle color="secondary">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+    <button ion-item>
+      <ion-icon name="logo-usd" item-start color="primary"></ion-icon>
+      <ion-label>Choose Currency</ion-label>
+      <ion-select [(ngModel)]="currency" (ngModelChange)="change_Currency()">
+        <ion-option value="USD">United States Dollars</ion-option>
+        <ion-option value="EUR">Euro</ion-option>
+        <ion-option value="GBP">United Kingdom Pounds</ion-option>
+        <ion-option value="DZD">Algeria Dinars</ion-option>
+        <ion-option value="ARP">Argentina Pesos</ion-option>
+        <ion-option value="AUD">Australia Dollars</ion-option>
+        <ion-option value="ATS">Austria Schillings</ion-option>
+        <ion-option value="BSD">Bahamas Dollars</ion-option>
+        <ion-option value="BBD">Barbados Dollars</ion-option>
+        <ion-option value="BEF">Belgium Francs</ion-option>
+        <ion-option value="BMD">Bermuda Dollars</ion-option>
+        <ion-option value="BRR">Brazil Real</ion-option>
+        <ion-option value="BGL">Bulgaria Lev</ion-option>
+        <ion-option value="CAD">Canada Dollars</ion-option>
+        <ion-option value="CLP">Chile Pesos</ion-option>
+        <ion-option value="CNY">China Yuan Renmimbi</ion-option>
+        <ion-option value="CYP">Cyprus Pounds</ion-option>
+        <ion-option value="CSK">Czech Republic Koruna</ion-option>
+        <ion-option value="DKK">Denmark Kroner</ion-option>
+        <ion-option value="NLG">Dutch Guilders</ion-option>
+        <ion-option value="XCD">Eastern Caribbean Dollars</ion-option>
+        <ion-option value="EGP">Egypt Pounds</ion-option>
+        <ion-option value="FJD">Fiji Dollars</ion-option>
+        <ion-option value="FIM">Finland Markka</ion-option>
+        <ion-option value="FRF">France Francs</ion-option>
+        <ion-option value="DEM">Germany Deutsche Marks</ion-option>
+        <ion-option value="XAU">Gold Ounces</ion-option>
+        <ion-option value="GRD">Greece Drachmas</ion-option>
+        <ion-option value="HKD">Hong Kong Dollars</ion-option>
+        <ion-option value="HUF">Hungary Forint</ion-option>
+        <ion-option value="ISK">Iceland Krona</ion-option>
+        <ion-option value="INR">India Rupees</ion-option>
+        <ion-option value="IDR">Indonesia Rupiah</ion-option>
+        <ion-option value="IEP">Ireland Punt</ion-option>
+        <ion-option value="ILS">Israel New Shekels</ion-option>
+        <ion-option value="ITL">Italy Lira</ion-option>
+        <ion-option value="JMD">Jamaica Dollars</ion-option>
+        <ion-option value="JPY">Japan Yen</ion-option>
+        <ion-option value="JOD">Jordan Dinar</ion-option>
+        <ion-option value="KRW">Korea (South) Won</ion-option>
+        <ion-option value="LBP">Lebanon Pounds</ion-option>
+        <ion-option value="LUF">Luxembourg Francs</ion-option>
+        <ion-option value="MYR">Malaysia Ringgit</ion-option>
+        <ion-option value="MXP">Mexico Pesos</ion-option>
+        <ion-option value="NLG">Netherlands Guilders</ion-option>
+        <ion-option value="NZD">New Zealand Dollars</ion-option>
+        <ion-option value="NOK">Norway Kroner</ion-option>
+        <ion-option value="PKR">Pakistan Rupees</ion-option>
+        <ion-option value="XPD">Palladium Ounces</ion-option>
+        <ion-option value="PHP">Philippines Pesos</ion-option>
+        <ion-option value="XPT">Platinum Ounces</ion-option>
+        <ion-option value="PLZ">Poland Zloty</ion-option>
+        <ion-option value="PTE">Portugal Escudo</ion-option>
+        <ion-option value="ROL">Romania Leu</ion-option>
+        <ion-option value="RUR">Russia Rubles</ion-option>
+        <ion-option value="SAR">Saudi Arabia Riyal</ion-option>
+        <ion-option value="XAG">Silver Ounces</ion-option>
+        <ion-option value="SGD">Singapore Dollars</ion-option>
+        <ion-option value="SKK">Slovakia Koruna</ion-option>
+        <ion-option value="ZAR">South Africa Rand</ion-option>
+        <ion-option value="KRW">South Korea Won</ion-option>
+        <ion-option value="ESP">Spain Pesetas</ion-option>
+        <ion-option value="XDR">Special Drawing Right (IMF)</ion-option>
+        <ion-option value="SDD">Sudan Dinar</ion-option>
+        <ion-option value="SEK">Sweden Krona</ion-option>
+        <ion-option value="CHF">Switzerland Francs</ion-option>
+        <ion-option value="TWD">Taiwan Dollars</ion-option>
+        <ion-option value="THB">Thailand Baht</ion-option>
+        <ion-option value="TTD">Trinidad and Tobago Dollars</ion-option>
+        <ion-option value="TRL">Turkey Lira</ion-option>
+        <ion-option value="VEB">Venezuela Bolivar</ion-option>
+        <ion-option value="ZMK">Zambia Kwacha</ion-option>
+        <ion-option value="EUR">Euro</ion-option>
+        <ion-option value="XCD">Eastern Caribbean Dollars</ion-option>
+        <ion-option value="XDR">Special Drawing Right (IMF)</ion-option>
+        <ion-option value="XAG">Silver Ounces</ion-option>
+        <ion-option value="XAU">Gold Ounces</ion-option>
+        <ion-option value="XPD">Palladium Ounces</ion-option>
+        <ion-option value="XPT">Platinum Ounces</ion-option>
+      </ion-select>
+    </button>
+    <button ion-item>
+      <ion-icon name="globe" item-start color="primary"></ion-icon>
+      <ion-label>Choose Language</ion-label>
+      <ion-select [(ngModel)]="language" (ngModelChange)="change_language()">
+        <ion-option value="ar" >عربى</ion-option>
+        <ion-option value="en">English</ion-option>
+      </ion-select>
+    </button>
+  </ion-list>
+</ion-content>

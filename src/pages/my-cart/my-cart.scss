@@ -1,0 +1,35 @@
+page-my-cart {
+    .book-card{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around
+    }
+    .card-cart{
+        position: relative;
+        .remove{
+            background: #ffbb489e;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            padding: 5px;
+            border-radius: 50%;
+            width: 27px;
+            z-index: 999;
+        }
+    }
+    // ion-select{
+    //     position: relative;
+    // }
+    ion-card img{
+        height: 130px;
+    }
+    // ion-card{
+    //     position: relative;
+    //     .country{
+    //         position: absolute;
+    //         width: 100%;
+    //         max-width: 100%;
+    //         right: 0;
+    //     }
+    // }
+}

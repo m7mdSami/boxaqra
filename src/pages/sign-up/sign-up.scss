@@ -1,0 +1,90 @@
+page-sign-up {
+    // .scroll-content {
+    //     align-content: center;
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: center;
+    //     text-align: center;
+    // }
+    
+    ion-card.card {
+        box-shadow: none;
+        background: rgba(0, 0, 0, 0.0);
+        border-radius: 5px;
+    }
+    
+    a, p,
+    ion-card-header.card-header {
+        color: #fff!important;
+    }
+    
+    .list > .item-block:first-child {
+    }
+    
+    .item {
+        margin-bottom: 10px;
+        background: rgba(255, 255, 255, 0.25);
+        *{
+            color: #fff
+        }
+        .text-input{
+            color: #fff;
+        }
+    
+        input::-moz-placeholder  {
+            color: #fff!important;
+        }
+    
+        input:-moz-placeholder {
+            color: #fff!important;
+        }
+    
+        *::-webkit-input-placeholder  {
+            color: #fff!important;
+        }
+    
+        *:-ms-input-placeholder  {
+            color: #fff!important;
+        }
+    
+        *:-moz-placeholder  {
+            color: #fff!important;
+        }
+    }
+    .or{
+        position: relative;
+        display: flex;
+        align-items: center;
+        &:after,
+        &:before
+        {
+            content: '';
+            width: 50%;
+            height: 2px;
+            background: #f4f4f4;
+            margin: 0 3px
+        }
+    }
+    
+    .icon {
+        padding-right: 10px;
+    }
+    
+    .bottom {
+        position: absolute;
+        bottom: 0;
+    }
+    [color="facebook"]{
+        background: #3b5998
+    }
+    [color="twitter"]{
+        background: #1ea1f3
+    }
+    [color="gmail"]{
+        background: #dc4c41
+    }
+    .item-md.item-input.item-input-has-focus .item-inner, .item-md.item-input.input-has-focus .item-inner{
+        border: none;
+        box-shadow: none
+    }
+}

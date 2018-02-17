@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar color="primary1">
+    <ion-title>Search for books</ion-title>
+  </ion-navbar>
+  <ion-searchbar [(ngModel)]="search_key" name="search_key" (keyup)="SearchBooks()"></ion-searchbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 *ngFor="let book of books">
+          <ion-card text-center>
+            <img src="http://malexs.com/boxera/public/upload/{{ book.image_name }}" alt="" (click)="PageBookInfo(book)">
+            <ion-grid>
+              <ion-row>
+                  <ion-col col-12>
+                    <h3 *ngIf="book.product_name?.length > 12;else h3">{{book.product_name.substring(0, 12)}}...</h3>
+                    <ng-template #h3><h3>{{book.product_name}}</h3></ng-template>
+                  </ion-col>
+                </ion-row>
+            </ion-grid>
+          </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+   <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="HideLoadIcon">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

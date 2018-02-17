@@ -1,0 +1,37 @@
+page-main {
+    ion-item-divider{
+        .input-wrapper{
+            & > {
+                .label{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 0
+                }
+            }
+        }
+    }
+    .cardInnerWrap{
+        position: relative;
+        .details{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5882352941176471);
+            color: #fff;
+            padding: 10px 0;
+        }
+    }
+    .ad{
+        height: 100px;
+        width: 100%;
+        text-align: center;
+        img{
+            width: 320px;
+            height: 100%;
+        }
+    }
+    
+      
+}

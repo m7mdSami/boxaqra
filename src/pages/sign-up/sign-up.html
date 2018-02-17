@@ -1,0 +1,300 @@
+<ion-header>
+
+  <ion-navbar color="none">
+    <ion-title>SignUp</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="background">
+    <ion-card>
+      <ion-card-header>
+        Login Form
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list no-line>
+          <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <ion-item>
+              <ion-input 
+                type="text" 
+                placeholder="name" 
+                [(ngModel)]="name" 
+                name="name"
+                required>
+              </ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input 
+                type="email" 
+                placeholder="email" 
+                [(ngModel)]="email"
+                name="email"
+                required>
+              </ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input 
+                  type="number" 
+                  placeholder="phone number" 
+                  [(ngModel)]="phone" 
+                  name="phone"
+                  required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input 
+                type="password" 
+                placeholder="Password" 
+                [(ngModel)]="password" 
+                name="password"
+                required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input 
+                  type="password" 
+                  placeholder="confirmPassword" 
+                  [(ngModel)]="confirm_password" 
+                  name="confirm_password"
+                  required></ion-input>
+              </ion-item>
+            <ion-item>
+              <ion-label color="light">اختر الدوله</ion-label>
+              <ion-select [(ngModel)]="country" name="country" required #countr>
+                  <ion-option data-countryCode="DZ" value="213">Algeria</ion-option>
+                  <ion-option data-countryCode="AD" value="376">Andorra</ion-option>
+                  <ion-option data-countryCode="AO" value="244">Angola</ion-option>
+                  <ion-option data-countryCode="AI" value="1264">Anguilla</ion-option>
+                  <ion-option data-countryCode="AG" value="1268">Antigua &amp; Barbuda</ion-option>
+                  <ion-option data-countryCode="AR" value="54">Argentina</ion-option>
+                  <ion-option data-countryCode="AM" value="374">Armenia</ion-option>
+                  <ion-option data-countryCode="AW" value="297">Aruba</ion-option>
+                  <ion-option data-countryCode="AU" value="61">Australia</ion-option>
+                  <ion-option data-countryCode="AT" value="43">Austria</ion-option>
+                  <ion-option data-countryCode="AZ" value="994">Azerbaijan</ion-option>
+                  <ion-option data-countryCode="BS" value="1242">Bahamas</ion-option>
+                  <ion-option data-countryCode="BH" value="973">Bahrain</ion-option>
+                  <ion-option data-countryCode="BD" value="880">Bangladesh</ion-option>
+                  <ion-option data-countryCode="BB" value="1246">Barbados</ion-option>
+                  <ion-option data-countryCode="BY" value="375">Belarus</ion-option>
+                  <ion-option data-countryCode="BE" value="32">Belgium</ion-option>
+                  <ion-option data-countryCode="BZ" value="501">Belize</ion-option>
+                  <ion-option data-countryCode="BJ" value="229">Benin</ion-option>
+                  <ion-option data-countryCode="BM" value="1441">Bermuda</ion-option>
+                  <ion-option data-countryCode="BT" value="975">Bhutan</ion-option>
+                  <ion-option data-countryCode="BO" value="591">Bolivia</ion-option>
+                  <ion-option data-countryCode="BA" value="387">Bosnia Herzegovina</ion-option>
+                  <ion-option data-countryCode="BW" value="267">Botswana</ion-option>
+                  <ion-option data-countryCode="BR" value="55">Brazil</ion-option>
+                  <ion-option data-countryCode="BN" value="673">Brunei</ion-option>
+                  <ion-option data-countryCode="BG" value="359">Bulgaria</ion-option>
+                  <ion-option data-countryCode="BF" value="226">Burkina Faso</ion-option>
+                  <ion-option data-countryCode="BI" value="257">Burundi</ion-option>
+                  <ion-option data-countryCode="KH" value="855">Cambodia</ion-option>
+                  <ion-option data-countryCode="CM" value="237">Cameroon</ion-option>
+                  <ion-option data-countryCode="CA" value="1">Canada</ion-option>
+                  <ion-option data-countryCode="CV" value="238">Cape Verde Islands</ion-option>
+                  <ion-option data-countryCode="KY" value="1345">Cayman Islands</ion-option>
+                  <ion-option data-countryCode="CF" value="236">Central African Republic</ion-option>
+                  <ion-option data-countryCode="CL" value="56">Chile</ion-option>
+                  <ion-option data-countryCode="CN" value="86">China</ion-option>
+                  <ion-option data-countryCode="CO" value="57">Colombia</ion-option>
+                  <ion-option data-countryCode="KM" value="269">Comoros</ion-option>
+                  <ion-option data-countryCode="CG" value="242">Congo</ion-option>
+                  <ion-option data-countryCode="CK" value="682">Cook Islands</ion-option>
+                  <ion-option data-countryCode="CR" value="506">Costa Rica</ion-option>
+                  <ion-option data-countryCode="HR" value="385">Croatia</ion-option>
+                  <ion-option data-countryCode="CU" value="53">Cuba</ion-option>
+                  <ion-option data-countryCode="CY" value="90392">Cyprus North</ion-option>
+                  <ion-option data-countryCode="CY" value="357">Cyprus South</ion-option>
+                  <ion-option data-countryCode="CZ" value="42">Czech Republic</ion-option>
+                  <ion-option data-countryCode="DK" value="45">Denmark</ion-option>
+                  <ion-option data-countryCode="DJ" value="253">Djibouti</ion-option>
+                  <ion-option data-countryCode="DM" value="1809">Dominica</ion-option>
+                  <ion-option data-countryCode="DO" value="1809">Dominican Republic</ion-option>
+                  <ion-option data-countryCode="EC" value="593">Ecuador</ion-option>
+                  <ion-option data-countryCode="EG" value="20">Egypt</ion-option>
+                  <ion-option data-countryCode="SV" value="503">El Salvador</ion-option>
+                  <ion-option data-countryCode="GQ" value="240">Equatorial Guinea</ion-option>
+                  <ion-option data-countryCode="ER" value="291">Eritrea</ion-option>
+                  <ion-option data-countryCode="EE" value="372">Estonia</ion-option>
+                  <ion-option data-countryCode="ET" value="251">Ethiopia</ion-option>
+                  <ion-option data-countryCode="FK" value="500">Falkland Islands</ion-option>
+                  <ion-option data-countryCode="FO" value="298">Faroe Islands</ion-option>
+                  <ion-option data-countryCode="FJ" value="679">Fiji</ion-option>
+                  <ion-option data-countryCode="FI" value="358">Finland</ion-option>
+                  <ion-option data-countryCode="FR" value="33">France</ion-option>
+                  <ion-option data-countryCode="GF" value="594">French Guiana</ion-option>
+                  <ion-option data-countryCode="PF" value="689">French Polynesia</ion-option>
+                  <ion-option data-countryCode="GA" value="241">Gabon</ion-option>
+                  <ion-option data-countryCode="GM" value="220">Gambia</ion-option>
+                  <ion-option data-countryCode="GE" value="7880">Georgia</ion-option>
+                  <ion-option data-countryCode="DE" value="49">Germany</ion-option>
+                  <ion-option data-countryCode="GH" value="233">Ghana</ion-option>
+                  <ion-option data-countryCode="GI" value="350">Gibraltar</ion-option>
+                  <ion-option data-countryCode="GR" value="30">Greece</ion-option>
+                  <ion-option data-countryCode="GL" value="299">Greenland</ion-option>
+                  <ion-option data-countryCode="GD" value="1473">Grenada</ion-option>
+                  <ion-option data-countryCode="GP" value="590">Guadeloupe</ion-option>
+                  <ion-option data-countryCode="GU" value="671">Guam</ion-option>
+                  <ion-option data-countryCode="GT" value="502">Guatemala</ion-option>
+                  <ion-option data-countryCode="GN" value="224">Guinea</ion-option>
+                  <ion-option data-countryCode="GW" value="245">Guinea - Bissau</ion-option>
+                  <ion-option data-countryCode="GY" value="592">Guyana</ion-option>
+                  <ion-option data-countryCode="HT" value="509">Haiti</ion-option>
+                  <ion-option data-countryCode="HN" value="504">Honduras</ion-option>
+                  <ion-option data-countryCode="HK" value="852">Hong Kong</ion-option>
+                  <ion-option data-countryCode="HU" value="36">Hungary</ion-option>
+                  <ion-option data-countryCode="IS" value="354">Iceland</ion-option>
+                  <ion-option data-countryCode="IN" value="91">India</ion-option>
+                  <ion-option data-countryCode="ID" value="62">Indonesia</ion-option>
+                  <ion-option data-countryCode="IR" value="98">Iran</ion-option>
+                  <ion-option data-countryCode="IQ" value="964">Iraq</ion-option>
+                  <ion-option data-countryCode="IE" value="353">Ireland</ion-option>
+                  <ion-option data-countryCode="IL" value="972">Israel</ion-option>
+                  <ion-option data-countryCode="IT" value="39">Italy</ion-option>
+                  <ion-option data-countryCode="JM" value="1876">Jamaica</ion-option>
+                  <ion-option data-countryCode="JP" value="81">Japan</ion-option>
+                  <ion-option data-countryCode="JO" value="962">Jordan</ion-option>
+                  <ion-option data-countryCode="KZ" value="7">Kazakhstan</ion-option>
+                  <ion-option data-countryCode="KE" value="254">Kenya</ion-option>
+                  <ion-option data-countryCode="KI" value="686">Kiribati</ion-option>
+                  <ion-option data-countryCode="KP" value="850">Korea North</ion-option>
+                  <ion-option data-countryCode="KR" value="82">Korea South</ion-option>
+                  <ion-option data-countryCode="KW" value="965">Kuwait</ion-option>
+                  <ion-option data-countryCode="KG" value="996">Kyrgyzstan</ion-option>
+                  <ion-option data-countryCode="LA" value="856">Laos</ion-option>
+                  <ion-option data-countryCode="LV" value="371">Latvia</ion-option>
+                  <ion-option data-countryCode="LB" value="961">Lebanon</ion-option>
+                  <ion-option data-countryCode="LS" value="266">Lesotho</ion-option>
+                  <ion-option data-countryCode="LR" value="231">Liberia</ion-option>
+                  <ion-option data-countryCode="LY" value="218">Libya</ion-option>
+                  <ion-option data-countryCode="LI" value="417">Liechtenstein</ion-option>
+                  <ion-option data-countryCode="LT" value="370">Lithuania</ion-option>
+                  <ion-option data-countryCode="LU" value="352">Luxembourg</ion-option>
+                  <ion-option data-countryCode="MO" value="853">Macao</ion-option>
+                  <ion-option data-countryCode="MK" value="389">Macedonia</ion-option>
+                  <ion-option data-countryCode="MG" value="261">Madagascar </ion-option>
+                  <ion-option data-countryCode="MW" value="265">Malawi </ion-option>
+                  <ion-option data-countryCode="MY" value="60">Malaysia </ion-option>
+                  <ion-option data-countryCode="MV" value="960">Maldives </ion-option>
+                  <ion-option data-countryCode="ML" value="223">Mali </ion-option>
+                  <ion-option data-countryCode="MT" value="356">Malta </ion-option>
+                  <ion-option data-countryCode="MH" value="692">Marshall Islands </ion-option>
+                  <ion-option data-countryCode="MQ" value="596">Martinique </ion-option>
+                  <ion-option data-countryCode="MR" value="222">Mauritania </ion-option>
+                  <ion-option data-countryCode="YT" value="269">Mayotte </ion-option>
+                  <ion-option data-countryCode="MX" value="52">Mexico </ion-option>
+                  <ion-option data-countryCode="FM" value="691">Micronesia </ion-option>
+                  <ion-option data-countryCode="MD" value="373">Moldova </ion-option>
+                  <ion-option data-countryCode="MC" value="377">Monaco </ion-option>
+                  <ion-option data-countryCode="MN" value="976">Mongolia </ion-option>
+                  <ion-option data-countryCode="MS" value="1664">Montserrat </ion-option>
+                  <ion-option data-countryCode="MA" value="212">Morocco </ion-option>
+                  <ion-option data-countryCode="MZ" value="258">Mozambique </ion-option>
+                  <ion-option data-countryCode="MN" value="95">Myanmar </ion-option>
+                  <ion-option data-countryCode="NA" value="264">Namibia </ion-option>
+                  <ion-option data-countryCode="NR" value="674">Nauru </ion-option>
+                  <ion-option data-countryCode="NP" value="977">Nepal </ion-option>
+                  <ion-option data-countryCode="NL" value="31">Netherlands </ion-option>
+                  <ion-option data-countryCode="NC" value="687">New Caledonia </ion-option>
+                  <ion-option data-countryCode="NZ" value="64">New Zealand </ion-option>
+                  <ion-option data-countryCode="NI" value="505">Nicaragua </ion-option>
+                  <ion-option data-countryCode="NE" value="227">Niger </ion-option>
+                  <ion-option data-countryCode="NG" value="234">Nigeria </ion-option>
+                  <ion-option data-countryCode="NU" value="683">Niue </ion-option>
+                  <ion-option data-countryCode="NF" value="672">Norfolk Islands </ion-option>
+                  <ion-option data-countryCode="NP" value="670">Northern Marianas </ion-option>
+                  <ion-option data-countryCode="NO" value="47">Norway </ion-option>
+                  <ion-option data-countryCode="OM" value="968">Oman </ion-option>
+                  <ion-option data-countryCode="PW" value="680">Palau </ion-option>
+                  <ion-option data-countryCode="PA" value="507">Panama </ion-option>
+                  <ion-option data-countryCode="PG" value="675">Papua New Guinea </ion-option>
+                  <ion-option data-countryCode="PY" value="595">Paraguay </ion-option>
+                  <ion-option data-countryCode="PE" value="51">Peru </ion-option>
+                  <ion-option data-countryCode="PH" value="63">Philippines </ion-option>
+                  <ion-option data-countryCode="PL" value="48">Poland </ion-option>
+                  <ion-option data-countryCode="PT" value="351">Portugal </ion-option>
+                  <ion-option data-countryCode="PR" value="1787">Puerto Rico </ion-option>
+                  <ion-option data-countryCode="QA" value="974">Qatar </ion-option>
+                  <ion-option data-countryCode="RE" value="262">Reunion </ion-option>
+                  <ion-option data-countryCode="RO" value="40">Romania </ion-option>
+                  <ion-option data-countryCode="RU" value="7">Russia </ion-option>
+                  <ion-option data-countryCode="RW" value="250">Rwanda </ion-option>
+                  <ion-option data-countryCode="SM" value="378">San Marino </ion-option>
+                  <ion-option data-countryCode="ST" value="239">Sao Tome &amp; Principe </ion-option>
+                  <ion-option data-countryCode="SA" value="966">Saudi Arabia </ion-option>
+                  <ion-option data-countryCode="SN" value="221">Senegal </ion-option>
+                  <ion-option data-countryCode="CS" value="381">Serbia </ion-option>
+                  <ion-option data-countryCode="SC" value="248">Seychelles </ion-option>
+                  <ion-option data-countryCode="SL" value="232">Sierra Leone </ion-option>
+                  <ion-option data-countryCode="SG" value="65">Singapore </ion-option>
+                  <ion-option data-countryCode="SK" value="421">Slovak Republic </ion-option>
+                  <ion-option data-countryCode="SI" value="386">Slovenia </ion-option>
+                  <ion-option data-countryCode="SB" value="677">Solomon Islands </ion-option>
+                  <ion-option data-countryCode="SO" value="252">Somalia </ion-option>
+                  <ion-option data-countryCode="ZA" value="27">South Africa </ion-option>
+                  <ion-option data-countryCode="ES" value="34">Spain </ion-option>
+                  <ion-option data-countryCode="LK" value="94">Sri Lanka </ion-option>
+                  <ion-option data-countryCode="SH" value="290">St. Helena </ion-option>
+                  <ion-option data-countryCode="KN" value="1869">St. Kitts </ion-option>
+                  <ion-option data-countryCode="SC" value="1758">St. Lucia </ion-option>
+                  <ion-option data-countryCode="SD" value="249">Sudan </ion-option>
+                  <ion-option data-countryCode="SR" value="597">Suriname </ion-option>
+                  <ion-option data-countryCode="SZ" value="268">Swaziland </ion-option>
+                  <ion-option data-countryCode="SE" value="46">Sweden </ion-option>
+                  <ion-option data-countryCode="CH" value="41">Switzerland </ion-option>
+                  <ion-option data-countryCode="SI" value="963">Syria </ion-option>
+                  <ion-option data-countryCode="TW" value="886">Taiwan </ion-option>
+                  <ion-option data-countryCode="TJ" value="7">Tajikstan </ion-option>
+                  <ion-option data-countryCode="TH" value="66">Thailand </ion-option>
+                  <ion-option data-countryCode="TG" value="228">Togo </ion-option>
+                  <ion-option data-countryCode="TO" value="676">Tonga </ion-option>
+                  <ion-option data-countryCode="TT" value="1868">Trinidad &amp; Tobago </ion-option>
+                  <ion-option data-countryCode="TN" value="216">Tunisia </ion-option>
+                  <ion-option data-countryCode="TR" value="90">Turkey </ion-option>
+                  <ion-option data-countryCode="TM" value="7">Turkmenistan </ion-option>
+                  <ion-option data-countryCode="TM" value="993">Turkmenistan </ion-option>
+                  <ion-option data-countryCode="TC" value="1649">Turks &amp; Caicos Islands </ion-option>
+                  <ion-option data-countryCode="TV" value="688">Tuvalu </ion-option>
+                  <ion-option data-countryCode="UG" value="256">Uganda </ion-option>
+                  <!-- <ion-option data-countryCode="GB" value="44">UK (+44)</ion-option> -->
+                  <ion-option data-countryCode="UA" value="380">Ukraine </ion-option>
+                  <ion-option data-countryCode="AE" value="971">United Arab Emirates </ion-option>
+                  <ion-option data-countryCode="US" value="1">USA </ion-option>
+                  <ion-option data-countryCode="GB" value="44" Selected>UK </ion-option>
+                  <ion-option data-countryCode="UY" value="598">Uruguay </ion-option>
+                  <!-- <ion-option data-countryCode="US" value="1">USA (+1)</ion-option> -->
+                  <ion-option data-countryCode="UZ" value="7">Uzbekistan </ion-option>
+                  <ion-option data-countryCode="VU" value="678">Vanuatu </ion-option>
+                  <ion-option data-countryCode="VA" value="379">Vatican City </ion-option>
+                  <ion-option data-countryCode="VE" value="58">Venezuela </ion-option>
+                  <ion-option data-countryCode="VN" value="84">Vietnam </ion-option>
+                  <ion-option data-countryCode="VG" value="84">Virgin Islands - British </ion-option>
+                  <ion-option data-countryCode="VI" value="84">Virgin Islands - US </ion-option>
+                  <ion-option data-countryCode="WF" value="681">Wallis &amp; Futuna </ion-option>
+                  <ion-option data-countryCode="YE" value="969">Yemen (North)</ion-option>
+                  <ion-option data-countryCode="YE" value="967">Yemen (South)</ion-option>
+                  <ion-option data-countryCode="ZM" value="260">Zambia </ion-option>
+                  <ion-option data-countryCode="ZW" value="263">Zimbabwe </ion-option>
+              </ion-select>
+            </ion-item>
+            <button 
+						ion-button 
+						block 
+						round 
+						color="primary" 
+						type="submit"
+						small
+						[disabled]="!f.valid"
+          >Log in</button>
+          <button ion-button 
+          block 
+          round 
+          color="primary"  (click)="changeLang()">
+              sam
+            </button>
+          </form>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>

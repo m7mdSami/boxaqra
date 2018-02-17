@@ -1,0 +1,76 @@
+<ion-header>
+
+  <ion-navbar color="primary1">
+    <ion-title color="primary1">{{ Book_Info.product_name }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row align-center>
+          <ion-col col-2>
+            <button ion-button clear (click)="Add_Card()">
+              <ion-icon name="cart" [class.fav]="card"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col col-8>
+              <img class="img-book" padding-horizontal src="http://malexs.com/boxera/public/upload/{{ Book_Info.image_name }}">
+          </ion-col>
+          <ion-col col-2>
+            <button ion-button clear (click)="Add_favourite()">
+              <ion-icon name="heart" [class.fav]="fav"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>Name : </ion-col>
+          <ion-col col-6>{{ Book_Info.product_name }}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>Price : </ion-col>
+          <ion-col col-6>{{ Book_Info.price }} {{currency}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>Category : </ion-col>
+          <ion-col col-6>{{ Book_Info.category_name }}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>rated : </ion-col>
+          <ion-col col-6>
+            <ion-icon name="ios-star" *ngFor="let star of stars" color="primary"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card *ngIf="Book_Info.description != null">
+    <ion-card-header>
+      Brief about book
+    </ion-card-header>
+    <ion-card-content>
+      {{ Book_Info.description }}
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Similar books
+    </ion-card-header>
+    <ion-card-content>
+      <ks-swiper-container [options]="options">
+        <ks-swiper-slide *ngFor="let similar_book of similar_books">
+          <div class="cardInnerWrap">
+              <img padding-horizontal src="http://malexs.com/boxera/public/upload/{{ similar_book.image_name }}" (click)="PageBookInfo(similar_book)">
+          </div>
+        </ks-swiper-slide>
+      </ks-swiper-container>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

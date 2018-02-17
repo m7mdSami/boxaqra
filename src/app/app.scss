@@ -1,0 +1,89 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+// Custom
+
+.flex{
+    display: flex;
+}
+input,
+input:focus,
+textarea,
+textarea:focus,
+select,
+select:focus
+{
+    outline: none;
+    border: none !important;
+}
+[absolute]{
+    position: absolute;
+}
+[flex-column]{
+    flex-direction: column;
+}
+[padding-horizontal]{
+    padding: 0 8px !important
+}
+[padding-vertical]{
+    padding: 8px 0 !important
+}
+// .logo{
+//     width: 50px;
+//     height: 45px;    
+// }
+.logo{
+    flex-wrap: wrap;
+    width: 100%;
+    position: absolute;
+    align-items: center;
+    top: 0;
+    height: 100%;
+    text-align: center;
+    left: 0;
+    justify-content: center;
+    &::after{
+        content: '';
+        display: block;
+        width: 51px  !important;
+        height: 48px !important;
+        background-image: url(../assets/icon/icon2.png);
+        background-size: contain;
+        position: relative  !important;
+        padding: 0  !important;
+    }
+}
+.swiper-wrapper{
+    left: -20px;
+}
+[shadow]{
+    
+}
+.infoP{
+    margin: 0;
+    width: 100%;
+    border-radius: 0; 
+}
+.swiper-slide img{
+    height: 100%;
+    max-height: 200px;
+}
+.modal-wrapper {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}

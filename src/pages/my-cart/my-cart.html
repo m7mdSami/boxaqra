@@ -1,0 +1,87 @@
+<ion-header>
+
+  <ion-navbar color="primary1">
+    <ion-title>My Cart</ion-title>
+    <button ion-button menuToggle color="secondary">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-card class="card-cart" *ngFor="let book of cardBooks; let i = index">
+        <ion-grid>
+          <ion-row>
+              <ion-col col-4>
+                  <img src="http://malexs.com/boxera/public/upload/{{ book.image_name }}" alt="">
+              </ion-col>
+              <ion-col col-8 class="book-card">
+                  <h2 *ngIf="book.product_name?.length > 12;else h2">{{book.product_name.substring(0, 12)}}...</h2>
+                  <ng-template #h2><h2>{{book.product_name}}</h2></ng-template>
+                  <div>
+                      {{book.price}}
+                  </div>
+                  <div>
+                    <button ion-button (click)="increase(i ,book.p_id)">
+                      <ion-icon name="add"></ion-icon>
+                    </button>
+                    <span padding-horizontal>
+                      {{num[i]}}
+                    </span>
+                    <button ion-button (click)="decrease(i ,book.p_id)">
+                      <ion-icon name="remove"></ion-icon>
+                    </button>
+                  </div>
+              </ion-col>
+              <button class="remove" (click)="deleted_book(book.p_id)">
+                <ion-icon name="trash"></ion-icon>
+              </button>
+          </ion-row>
+        </ion-grid>
+    </ion-card>
+
+    <ion-card *ngIf="cardBooks?.length == 0">
+      <h1 text-center padding>سلة شرائك فارغة</h1>
+    </ion-card>
+
+    <ion-list *ngIf="cardBooks?.length != 0">
+
+      <!-- <ion-item>
+        <ion-label floating>ادخل العنوان</ion-label>
+        <ion-input 
+        type="text" 
+        [(ngModel)]="address" 
+        name="address"
+        ></ion-input>
+      </ion-item> -->
+    
+      <ion-item>
+        <ion-label floating>ادخل رقم الواتساب</ion-label>
+        <ion-input 
+        type="number"
+        [(ngModel)]="whatsapp" 
+        name="whatsapp"
+        required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Choose Country</ion-label>
+        <ion-select class="country" *ngIf="cardBooks?.length != 0" [(ngModel)]="country">
+            <ion-option *ngFor="let country of countries" value="{{country.country_code}}" [selected]="country.country_name == CountyName">{{country.country_name}}</ion-option>
+        </ion-select>
+      </ion-item>
+    
+    </ion-list>
+
+    <ion-card>
+
+    </ion-card>
+</ion-content>
+
+<ion-footer *ngIf="cardBooks?.length != 0">
+  <ion-toolbar>
+    <button class="remove" ion-button full (click)="order()">Order</button>
+  </ion-toolbar>
+</ion-footer>

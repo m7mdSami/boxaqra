@@ -1,0 +1,52 @@
+<ion-header>
+
+  <ion-navbar color="primary1">
+    <ion-title>My Book</ion-title>
+    <button ion-button menuToggle color="secondary">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card *ngFor="let order of order_list">
+
+    <ion-card-content>
+      <p>
+        {{order.note}}
+      </p>
+    </ion-card-content>
+
+    <ion-item>
+      <ion-icon name='time' item-start style="color: #d03e84"></ion-icon>
+      date
+      <ion-badge item-end>{{order.date}}</ion-badge>
+    </ion-item>
+
+    <ion-item *ngIf="order.dilevry_price">
+      <ion-icon name='car' item-start style="color: #55acee"></ion-icon>
+      Dilevry Price
+      <ion-badge item-end>{{order.dilevry_price}}</ion-badge>
+    </ion-item>
+
+    <ion-item *ngIf="order.book_price">
+      <ion-icon name='book' item-start style="color: #55acee"></ion-icon>
+      Book Price
+      <ion-badge item-end>{{order.book_price}}</ion-badge>
+    </ion-item>
+
+    <ion-item *ngIf="order.price">
+      <ion-icon name='cash' item-start style="color: #55acee"></ion-icon>
+      Total Price
+      <ion-badge item-end>{{order.price}}</ion-badge>
+    </ion-item>
+
+  </ion-card>
+  
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="HideLoadIcon">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

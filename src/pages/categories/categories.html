@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar color="primary1">
+    <ion-title class="logo">
+      <!-- <img class="logo" src="../assets/icon/logo1.png" alt=""> -->
+    </ion-title>
+    <button ion-button menuToggle color="secondary">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons end (click)="PageSearch()">
+      <button ion-button icon-only color="secondary">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card *ngFor="let category of categories" (click)="PageBookList(category.id, category.category_name)">
+    <img src="http://malexs.com/boxera/public/upload/{{ category.image }}"/>
+    <div class="card-title">{{ category.category_name }}</div>
+    <div class="card-subtitle" *ngIf="category.length >= 1">{{ category.length }} Books</div>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,16 @@
+page-books-list {
+    .book-card{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between
+    }
+    ion-card img {
+        height: 260px
+    }
+    .fav{
+        color: red
+    }
+    .searchbar-clear-icon{
+        display: none !important;
+    }
+}

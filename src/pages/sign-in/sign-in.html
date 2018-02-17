@@ -1,0 +1,146 @@
+<ion-content class="background">
+	<ion-card *ngIf="loginForm">
+		<ion-card-header class="flex">
+			<img class="logo-login" src="../assets/icon/icon2.png" alt=""/>
+		</ion-card-header>
+		<ion-card-content>
+			<ion-list no-line>
+				<form (ngSubmit)="onSubmitLogin(f)" #f="ngForm">
+					<ion-item>
+						<ion-icon name="mail" item-start></ion-icon>
+						<ion-input 
+							[(ngModel)]="email" 
+							name="email" 
+							required 
+							type="email" 
+							placeholder="email"></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-icon name="unlock" item-start></ion-icon>
+						<ion-input 
+							[(ngModel)]="password" 
+							name="password"
+							required 
+							type="password" 
+							placeholder="password"
+							></ion-input>
+					</ion-item>
+					
+					<button 
+						ion-button 
+						block 
+						color="secondary" 
+						type="submit"
+						small
+						[disabled]="!f.valid"
+					>Log in</button>
+
+					<ion-grid>
+						<ion-row>
+							<ion-col text-center>
+								<a class="forgotPass" (click)="goForgetPasswordPage()">Forgot password?</a>
+							</ion-col>
+						</ion-row>
+					</ion-grid>
+					<ion-grid class="footer">
+						<ion-row>
+							<ion-col text-left>
+								<a class="forgotPass" (click)="goSignUpPage()">Register</a>
+							</ion-col>
+							<ion-col text-right>
+								<a class="forgotPass" (click)="goHome()">Back</a>
+							</ion-col>
+						</ion-row>
+					</ion-grid>
+				</form>
+				
+			</ion-list>
+		</ion-card-content>
+	</ion-card>
+	
+	<ion-card *ngIf="!loginForm">
+		<ion-card-header class="flex">
+			<img class="logo-login" src="../assets/icon/icon2.png" alt=""/>
+		</ion-card-header>
+		<ion-card-content>
+			<ion-list no-line>
+				<form (ngSubmit)="onSubmitRegister(f)" #f="ngForm">
+					<ion-item>
+						<ion-icon name="mail" item-start></ion-icon>
+						<ion-input 
+							[(ngModel)]="email" 
+							name="email" 
+							required 
+							type="email" 
+							placeholder="email"></ion-input>
+					</ion-item>
+
+					<ion-item>
+						<ion-icon name="person" item-start></ion-icon>
+						<ion-input 
+							[(ngModel)]="name" 
+							name="name"
+							required 
+							type="text" 
+							placeholder="name"
+							></ion-input>
+					</ion-item>
+
+					<ion-item>
+						<ion-icon name="unlock" item-start></ion-icon>
+						<ion-input 
+							[(ngModel)]="password" 
+							name="password"
+							required 
+							type="password" 
+							placeholder="password"
+							></ion-input>
+					</ion-item>
+
+					<ion-item>
+						<ion-icon name="call" item-start></ion-icon>
+						<ion-input 
+							[(ngModel)]="phone" 
+							name="phone"
+							required 
+							type="number" 
+							placeholder="phone number"
+							></ion-input>
+					</ion-item>
+
+					<ion-item>
+						<ion-icon name="md-globe" item-start></ion-icon>
+						<ion-input 
+							[(ngModel)]="address" 
+							name="address"
+							required 
+							type="text" 
+							placeholder="address"
+							></ion-input>
+					</ion-item>
+					
+					<button 
+						ion-button 
+						block 
+						color="secondary" 
+						type="submit"
+						small
+						[disabled]="!f.valid"
+					>Register</button>
+
+					<ion-grid class="footer">
+						<ion-row>
+							<ion-col text-left>
+								<a class="forgotPass" (click)="goSignUpPage()">Login</a>
+							</ion-col>
+							<ion-col text-right>
+								<a class="forgotPass" (click)="goHome()">Back</a>
+							</ion-col>
+						</ion-row>
+					</ion-grid>
+				</form>
+				
+			</ion-list>
+		</ion-card-content>
+	</ion-card>
+</ion-content>

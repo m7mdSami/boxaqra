@@ -1,0 +1,50 @@
+<ion-menu [content]="nav" persistent="true">
+  <ion-content>
+    <ion-card padding color="secondary" class="infoP" *ngIf="isLogin">
+        <ion-card-header text-capitalize>
+            {{UserName}}
+        </ion-card-header>
+        <ion-card-content>
+            {{UserEmail}}
+        </ion-card-content>
+    </ion-card>
+    <ion-list class="IconMenu">
+      <button menuClose ion-item (click)="onLoad(mainRoot)">
+        Main
+        <ion-icon name="home" item-left color="secondary"></ion-icon>
+      </button>
+      <button menuClose ion-item (click)="onLoad(myBookRoot)" *ngIf="isLogin">
+        My book
+        <ion-icon name="book" item-left color="secondary"></ion-icon>
+      </button>
+      <button menuClose ion-item (click)="onLoad(categoriesRoot)">
+        Categories
+        <ion-icon name="apps" item-left color="secondary"></ion-icon>
+      </button>
+      <button menuClose ion-item (click)="onLoad(myCartRoot)" *ngIf="isLogin">
+        My cart
+        <ion-icon name="cart" item-left color="secondary"></ion-icon>
+      </button>
+      <button menuClose ion-item (click)="Fav_page()" *ngIf="isLogin">
+        Favorites
+        <ion-icon name="heart" item-left color="secondary"></ion-icon>
+      </button>
+      <button menuClose ion-item (click)="onLoad(ProfilePage)" *ngIf="isLogin">
+        Setting
+        <ion-icon name="settings" item-left color="secondary"></ion-icon>
+      </button>
+      <button menuClose ion-item (click)="onLoad(loginPage)" *ngIf="!isLogin">
+        Login
+        <ion-icon name="log-in" item-left color="secondary"></ion-icon>
+      </button>
+      <button menuClose ion-item (click)="onLogout()" *ngIf="isLogin">
+        Logout
+        <ion-icon name="log-out" item-left color="secondary"></ion-icon>
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="mainRoot" #nav swipeBackEnabled="false"></ion-nav>
